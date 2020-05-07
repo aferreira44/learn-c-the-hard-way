@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
     for (i = 0; i < count; i++)
     {
         printf("%s has %d years alive.\n", *(names+i), *(ages+i));
+	printf("Address of \"name\" is %p\n", &names[i]);
+	printf("Address of \"age\" is %p\n", &ages[i]);
     }
 
     printf("---\n");
