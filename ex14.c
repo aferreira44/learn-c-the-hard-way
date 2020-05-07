@@ -11,7 +11,7 @@ void print_arguments(int argc, char *argv[])
 
     for (i = 0; i < argc; i++)
     {
-        print_letters(strlen(argv[i]), argv[i]);
+        print_letters(strlen(*(argv + i)), *(argv + i));
     }
 }
 
@@ -21,7 +21,7 @@ void print_letters(int argLen, char arg[])
 
     for (i = 0; i < argLen; i++)
     {
-        char ch = arg[i];
+        char ch = *(arg + i);
 
         if (isalpha(ch) || isblank(ch))
         {
