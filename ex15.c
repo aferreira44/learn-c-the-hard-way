@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+void printAddressChar(char* msg, char *ptr);
+void printAddressInt(char* msg, int *ptr);
+
 int main(int argc, char *argv[])
 {
     // create two arrays we care about
@@ -23,8 +26,8 @@ int main(int argc, char *argv[])
     for (i = 0; i < count; i++)
     {
         printf("%s has %d years alive.\n", *(names+i), *(ages+i));
-	printf("Address of \"name\" is %p\n", &names[i]);
-	printf("Address of \"age\" is %p\n", &ages[i]);
+	printAddressChar("name", &names[i]);
+	printAddressInt("age", &ages[i]);
     }
 
     printf("---\n");
@@ -57,3 +60,15 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+ 
+void printAddressChar(char* msg, int *ptr) {
+	printf("sizeof %li\n", sizeof((int) ptr));
+        printf("The address of %s is %d\n", msg, (int) ptr);
+};
+
+
+void printAddressInt(char* msg, int *ptr) {
+	printf("sizeof %li\n", sizeof(ptr));
+        printf("The address of %s is %d\n", msg, (int) ptr);
+};
